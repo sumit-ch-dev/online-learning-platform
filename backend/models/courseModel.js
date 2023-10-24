@@ -21,10 +21,11 @@ const courseSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    students: {
-        type: [String],
-        default: []
-    },
+    students: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student',
+        default: [] 
+    }],
     created_at: {
         type: Date,
         default: Date.now
